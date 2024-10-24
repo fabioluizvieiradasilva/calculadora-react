@@ -34,6 +34,19 @@ const App = () =>{
     }
   }
 
+  const handlerMinusNumbers = () => {
+    console.log(currentNumber)
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+      setOperation('-');
+    } else {
+      const minus = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(minus));
+      setOperation('');
+    }
+  }
+
   const handlerEquals = () => {
     console.log(firstNumber)
     console.log(operation)
@@ -43,6 +56,9 @@ const App = () =>{
         case '+':
           handlerSumNumbers();
           break;
+        case '-':
+          handlerMinusNumbers();
+          break;          
       
         default:
           break;
@@ -71,7 +87,7 @@ const App = () =>{
           <Button label="4" onClick={() => handlerAddNumber('4')}/>
           <Button label="5" onClick={() => handlerAddNumber('5')}/>
           <Button label="6" onClick={() => handlerAddNumber('6')}/>
-          <Button label="-"/>
+          <Button label="-" onClick={handlerMinusNumbers}/>
         </Row>
         <Row>
           <Button label="1" onClick={() => handlerAddNumber('1')}/>
