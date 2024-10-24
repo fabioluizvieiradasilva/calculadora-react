@@ -19,5 +19,6 @@ export const InputContainer = styled.div`
         border: 0;
         align: right;
         padding: 0 10px;
+        font-size: 48px;
     }
 `
